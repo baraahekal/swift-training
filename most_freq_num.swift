@@ -6,7 +6,7 @@ func most_freq_number(_ lst: [Int]) -> Int {
     }
     
     var maxFreq = Int.min
-    var maxVal = -1
+    var maxVal = 0
     for (key, value) in freq {
         if maxFreq < value {
             maxFreq = value
