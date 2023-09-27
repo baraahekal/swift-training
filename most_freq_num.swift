@@ -1,8 +1,8 @@
 func most_freq_number(_ lst: [Int]) -> Int {
-    var freq = Dictionary<Int, Int>()
+    var freq = [Int: Int]()
     
     for element in lst {
-        freq[element] = (freq[element] ?? 0) + 1
+        freq[element, default: 0] += 1
     }
     
     var maxFreq = Int.min
