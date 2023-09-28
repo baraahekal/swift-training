@@ -1,6 +1,6 @@
 # Closures in Swift part 2
 
-## 1- Using closures as parameters when they accept parameters
+## 1- Using closures as parameters when return values
 - Lets break down `do_operation` function <br>
 It takes two parameters:
 1. `num` which is an integer number 
@@ -23,5 +23,43 @@ another simple way to call `do operation`:
 ```swift
 do_operation(num: 1) {
     "Hello World!"
+}
+```
+
+## 2- Shorthand parameter names
+We just made a `travel()` function. It accepts one parameter, which is a closure that itself accepts one parameter and returns a string. That closure is then run between two calls to `print()`.
+
+```swift
+func travel(action: (String) -> String) {
+    print("I'm getting ready to go.")
+    let description = action("London")
+    print(description)
+    print("I arrived!")
+}
+```
+
+In a normal way, we will call `travel()` like this:
+
+```swift
+travel { (place: String) -> String in
+    return "I'm going to \(place) in my car"
+}
+```
+
+However Swift knows that the parameter to that closure and must be a string and its returning type also <br>so this is allowed:
+
+```swift
+travel { place in
+    return "I'm going to \(place) in my car"
+}
+```
+
+> **Note**
+> Moving forward to our topic [Shorthand parameter names](#Shorthand parameter names):
+Swift lets you go even shorter. Rather than writing `place in` we can let Swift provide automatic names for the closure’s parameters. These are named with a dollar sign, then a number counting from 0.
+
+```swift
+travel {
+    "I'm going to \($0) in my car"
 }
 ```
