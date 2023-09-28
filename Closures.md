@@ -54,12 +54,31 @@ travel { place in
 }
 ```
 
-> **Note**
 > Moving forward to our topic [Shorthand parameter names](#2--Shorthand-parameter-names):
 Swift lets you go even shorter. Rather than writing `place in` we can let Swift provide automatic names for the closure’s parameters. These are named with a dollar sign, then a number counting from 0.
 
 ```swift
 travel {
     "I'm going to \($0) in my car"
+}
+```
+
+## 3- Closures with multiple parameters
+This time our `travel()` function will require a closure that specifies where someone is traveling to, and the speed they are going. This means we need to use `(String, Int) -> String` for the parameter’s type:
+
+```swift
+func travel(action: (String, Int) -> String) {
+    print("I'm getting ready to go.")
+    let description = action("London", 60)
+    print(description)
+    print("I arrived!")
+}
+```
+
+And after learning [Shorthand parameter names](#2--Shorthand-parameter-names) we will call `travel()` function like this:
+
+```swift
+travel {
+    "I'm going to \($0) at \($1) miles per hour."
 }
 ```
