@@ -16,7 +16,7 @@ do_operation(num: 1) {
 }
 
 ```
-> **Note**
+> **Danger**
 > We are calling `do operation` function with `num: 1` then opening a curly brackets to pass the closure value which is returning "Hello World!" 
 
 another way to call `do operation`:
