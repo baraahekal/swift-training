@@ -1,8 +1,8 @@
 # Closures in Swift part 2
 
 ## 1- Using closures as parameters when they accept parameters
-- Lets break down `do_operation` function
-it takes two parameters
+- Lets break down `do_operation` function <br>
+It takes two parameters:
 1. `num` which is an integer number 
 2. `operation` which is a closure with no params and returns a `String`
 
