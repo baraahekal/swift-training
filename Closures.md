@@ -92,11 +92,32 @@ func travel() -> (String) -> Void {
     }
 }
 ```
-As we know which comes after the 1st arrow in functions is its returning type, so in the above code `(String) -> Void` is `travel()`'s return type which is a closure accepting a `String` and returning `Void`
+As we know which comes after the 1st arrow in functions is its returning type, so in the above code `(String) -> Void` is `travel()`'s return type which is a closure accepting a `String` and returning `Void`<br>
 
-> We can now call `travel()` to get back that closure, then call it as a function:
+We can now call `travel()` to get back that closure, then call it as a function:
 
 ```swift
 let result = travel()
 result("London")
 ```
+
+## 5- Capturing Values
+Closures capture and store references to constants and variables from the surrounding context. This is useful for capturing values in asynchronous operations.
+
+```swift
+func makeIncrementer(_ incrementAmount: Int) -> () -> Int {
+    var total = 0
+    let incrementer: () -> Int = {
+        total += incrementAmount
+        return total
+    }
+    return incrementer
+}
+
+let incrementByTwo = makeIncrementer(2)
+print(incrementByTwo()) // Outputs: 2
+print(incrementByTwo()) // Outputs: 4
+```
+
+- Lets break down `makeIncrementer` function <br>
+It takes an `Int` parameter and returns a closure that takes no parameters and returns an `Int`
