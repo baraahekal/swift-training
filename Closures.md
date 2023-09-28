@@ -119,5 +119,5 @@ print(incrementByTwo()) // Outputs: 2
 print(incrementByTwo()) // Outputs: 4
 ```
 
-- Lets break down `makeIncrementer` function <br>
+- Lets break down `makeIncrementer` function:<br>
 It takes an `Int` parameter and returns a closure that takes no parameters and returns an `Int`
