@@ -1,10 +1,10 @@
 # Closures in Swift part 2
 
 ## 1- Using closures as parameters when they accept parameters
-- Lets break it down `do_operation`function
-it takes to parameters
+- Lets break down `do_operation` function
+it takes two parameters
 1. `num` which is an integer number 
-2. `operation` which is a closure with no params and returning a `String`
+2. `operation` which is a closure with no params and returns a `String`
 
 ```swift
 func do_operation(num: Int, operation: () -> String) {
@@ -15,4 +15,12 @@ do_operation(num: 1) {
     "Hello World!"
 }
 
+```
+> We are calling `do operation` function with `num: 1` then opening a curly brackets to pass the closure value which is returning "Hello World!" 
+
+another way to call `do operation`:
+```swift
+do_operation(num: 1) { () -> String in
+    return "Hello World!"
+}
 ```
