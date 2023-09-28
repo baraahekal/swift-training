@@ -92,7 +92,7 @@ func travel() -> (String) -> Void {
     }
 }
 ```
-as we know which comes after the 1st arrow for the function is its returning type, so in this code `(String) -> Void` is `travel()` return type which is a closure accepting a `String` and returning `Void`
+As we know which comes after the 1st arrow in functions is its returning type, so in the above code `(String) -> Void` is `travel()`'s return type which is a closure accepting a `String` and returning `Void`
 
 > We can now call `travel()` to get back that closure, then call it as a function:
 
