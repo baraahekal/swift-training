@@ -75,10 +75,28 @@ func travel(action: (String, Int) -> String) {
 }
 ```
 
-And after learning [Shorthand parameter names](#2--Shorthand-parameter-names) we will call `travel()` function like this:
+And after learning [Shorthand parameter names](#2--Shorthand-parameter-names), we will call `travel()` function like this:
 
 ```swift
 travel {
     "I'm going to \($0) at \($1) miles per hour."
 }
+```
+
+## 4- Returning closures from functions
+Note this syntax:
+```swift
+func travel() -> (String) -> Void {
+    return {
+        print("I'm going to \($0)")
+    }
+}
+```
+as we know which comes after the 1st arrow for the function is its returning type, so in this code `(String) -> Void` is `travel()` return type which is a closure accepting a `String` and returning `Void`
+
+> We can now call `travel()` to get back that closure, then call it as a function:
+
+```swift
+let result = travel()
+result("London")
 ```
