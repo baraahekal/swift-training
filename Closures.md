@@ -55,7 +55,7 @@ travel { place in
 ```
 
 > **Note**
-> Moving forward to our topic [Shorthand parameter names](#Shorthand parameter names):
+> Moving forward to our topic [Shorthand parameter names](#2- Shorthand parameter names):
 Swift lets you go even shorter. Rather than writing `place in` we can let Swift provide automatic names for the closure’s parameters. These are named with a dollar sign, then a number counting from 0.
 
 ```swift
