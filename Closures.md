@@ -11,17 +11,17 @@ func do_operation(num: Int, operation: () -> String) {
     print("Op \(num)- \(operation())")
 }
 
-do_operation(num: 1) {
-    "Hello World!"
+do_operation(num: 1) { () -> String in
+    return "Hello World!"
 }
 
 ```
 > **Note**
 > We are calling `do operation` function with `num: 1` then opening a curly brackets to pass the closure value which is returning "Hello World!" 
 
-another way to call `do operation`:
+another simple way to call `do operation`:
 ```swift
-do_operation(num: 1) { () -> String in
-    return "Hello World!"
+do_operation(num: 1) {
+    "Hello World!"
 }
 ```
