@@ -17,9 +17,9 @@ do_operation(num: 1) { () -> String in
 
 ```
 > **Note**
-> We are calling `do operation` function with `num: 1` then opening a curly brackets to pass the closure value using `trailing closures` technique which is returning "Hello World!" 
+> We are calling `do operation` function with `num: 1` then opening a curly brackets to pass the closure value which is returning "Hello World!" 
 
-another simple way to call `do operation`:
+another simple way to call `do operation` using `trailing closures` technique:
 ```swift
 do_operation(num: 1) {
     "Hello World!"
