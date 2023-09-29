@@ -7,12 +7,10 @@ func validBraces(_ string: String) -> Bool {
 
     for char in string {
         if isLeft[String(char), default: false] {
-            if check.isEmpty {
-                return false
-            }
-            if let lastChar = check.first, char != Character(reverse[String(lastChar)] ?? "") {
-                return false
-            }
+            if check.isEmpty || (check.first != nil && char != Character(reverse[String(check.first!)] ?? "")) {
+    return false
+}
+
             check.removeFirst()
             
         } else {
