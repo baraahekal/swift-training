@@ -7,7 +7,7 @@ func countDuplicates(_ s:String) -> Int {
     }
     
     var ct = 0
-    for (_, val) in mp {
+    for val in mp.values {
         if val > 1 {
             ct += 1
         }
